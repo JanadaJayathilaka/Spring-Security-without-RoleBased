@@ -7,7 +7,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
-public class MyUserDetailsService implements UserDetailsPasswordService {
+public class MyUserDetailsService implements UserDetailsService {
 
     private final PasswordEncoder passwordEncoder;
 
@@ -25,8 +25,5 @@ public class MyUserDetailsService implements UserDetailsPasswordService {
         return user;
     }
 
-    @Override
-    public UserDetails updatePassword(UserDetails user, @Nullable String newPassword) {
-        return null;
-    }
+
 }
