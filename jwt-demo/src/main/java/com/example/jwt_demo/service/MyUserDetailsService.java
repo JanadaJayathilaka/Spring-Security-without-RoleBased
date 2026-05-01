@@ -2,19 +2,16 @@ package com.example.jwt_demo.service;
 
 import com.example.jwt_demo.config.SecurityConfig;
 import org.jspecify.annotations.Nullable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-
+@Service
 public class MyUserDetailsService implements UserDetailsService {
 
-    private final PasswordEncoder passwordEncoder;
-
-    public MyUserDetailsService(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
-    }
-
+    @Autowired
+    private  PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
